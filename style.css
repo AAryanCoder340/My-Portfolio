@@ -356,7 +356,7 @@ textarea:focus {
 .about-image img {
   width: 220px;
   height: 220px;
-  border-radius: 50%;   /* 👈 makes it circular */
+  border-radius: 50%;  
   object-fit: cover;
   border: 3px solid var(--accent);
 }
