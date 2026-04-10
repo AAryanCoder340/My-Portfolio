@@ -373,16 +373,33 @@ textarea:focus {
 }
 
 .project-link {
+  position: relative;
   display: inline-block;
   margin-top: 14px;
-  color: #1ba5e0;   /* 👈 brighter blue (more clickable) */
+  color: #1ba5e0;   /* blue initially */
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
-.card:hover .project-hint {
-  opacity: 1;
+/* underline (hidden initially) */
+.project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #1ba5e0;   /* blue underline */
+  transition: width 0.3s ease;
+}
+
+.card:hover .project-link {
+  color: #ffffff;   /* text turns white */
+}
+
+.card:hover .project-link::after {
+  width: 100%;   /* underline appears */
 }
 
 @media (max-width: 900px) {
