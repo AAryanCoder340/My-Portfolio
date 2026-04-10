@@ -229,7 +229,9 @@ h2::after {
 }
 
 .card:hover {
-  transform: translateY(-4px);
+   transform: translateY(-6px);
+  cursor: pointer;   /* 👈 VERY IMPORTANT */
+  border-color: var(--accent);
   border-color: rgba(34, 211, 238, 0.35);
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.35),
@@ -354,15 +356,33 @@ textarea:focus {
 }
 
 .about-image img {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;  
   object-fit: cover;
   border: 3px solid var(--accent);
+    transition: 0.3s;
 }
 
 .about-text {
   flex: 1;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #1ba5e0;   /* 👈 brighter blue (more clickable) */
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card:hover .project-hint {
+  opacity: 1;
 }
 
 @media (max-width: 900px) {
